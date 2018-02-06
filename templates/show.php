@@ -10,7 +10,7 @@
 <body>
 
 <?php
-foreach ($post as $value){
+foreach ($data as $value){
     echo '<li></li><a href="detail.php?id=' . $value['id'] . '">' . $value['title'] . '</a></br>';
 }
 ?>
