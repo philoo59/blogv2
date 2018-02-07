@@ -4,7 +4,7 @@ $title = 'BLOG V2';
 ob_start();
 ?>
 <ul>
-    <li><a href="index.php">accueil</a></li>
+    <li><a href="/blogv2/index.php">accueil</a></li>
 </ul>
 </nav>
 

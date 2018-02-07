@@ -8,9 +8,8 @@ ob_start();
 <ul>
     <?php foreach ($data as $value) { ?>
         <li>
-            <a href="detail.php?id=<?= $value['id'] ?>"><?= $value['title'] ?></a>
+            <a href="index.php/detail.php?id=<?= $value['id'] ?>"><?= $value['title'] ?></a>
         </li>
-
         <?php
     } ?>
 </ul>
