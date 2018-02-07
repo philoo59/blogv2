@@ -1,20 +1,22 @@
-<!doctype html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Show detail article</title>
-</head>
-<body>
+<?php
+$title = 'BLOG V2';
+
+ob_start();
+?>
+
+<h1>Liste des articles</h1>
+<ul>
+    <?php foreach ($data as $value) { ?>
+        <li>
+            <a href="detail.php?id=<?= $value['id'] ?>"><?= $value['title'] ?></a>
+        </li>
+
+        <?php
+    } ?>
+</ul>
 
 <?php
-foreach ($data as $value){
-    echo '<li></li><a href="detail.php?id=' . $value['id'] . '">' . $value['title'] . '</a></br>';
-}
-?>
-</ul>
-</body>
-</html>
+$content = ob_get_clean();
 
+include('layout.php')
+?>
