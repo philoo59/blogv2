@@ -1,0 +1,59 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: Philippe
+ * Date: 07/02/2018
+ * Time: 15:46
+ */
+
+$title = 'BLOG V2';
+$css = '../css/style.css';
+
+if (sizeof($_POST) === 0) {
+
+    ob_start();
+    ?>
+    <h1>Modifier un article</h1>
+    <form method="post">
+        <label for="title">TITRE : </label>
+        <input id="title" type="text" name="title" value="<?= $row['title']?>" placeholder="Saisissez le titre"><br>
+        <label for="detail">DETAIL : </label>
+        <textarea name="detail" id="detail" cols="30" rows="10"><?= $row['detail']?></textarea>
+        <input type="hidden" name="id" value="<?= $row['id']?>">
+        <div class="bouton">
+            <input type="submit" value="Modifier">
+            <input type="button" onclick="javascript:location.href = '/blogv2/index.php';" value="Annuler">
+        </div>
+    </form>
+
+    <?php
+    $content = ob_get_clean();
+    include('layout.php');
+} elseif ($_POST['title'] === '' || $_POST['detail'] === '') {
+    ob_start();
+    ?>
+    <h2>Vous devez renseigner tous les champs</h2>
+    <form method="post">
+        <label for="title">TITRE : </label>
+        <input id="title" type="text" name="title" value="<?= $row['title']?>" placeholder="Saisissez le titre"><br>
+        <label for="detail">DETAIL : </label>
+        <textarea name="detail" id="detail" cols="30" rows="10"><?= $row['detail']?></textarea>
+        <input type="hidden" name="id" value="<?= $row['id']?>">
+        <div class="bouton">
+            <input type="submit" value="Modifier">
+            <input type="button" onclick="javascript:location.href = '/blogv2/index.php';" value="Annuler">
+        </div>
+    </form>
+
+    <?php
+    $content = ob_get_clean();
+    include('layout.php');
+} else {
+    $retour = modifPost($_POST);
+
+    if ($retour) {
+        header('Location: /blogv2/index.php');
+    }
+}
+
+?>

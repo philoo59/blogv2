@@ -1,0 +1,142 @@
+/*------------------------------------------------
+--                    FONTS                     --
+--------------------------------------------------*/
+@font-face {
+
+}
+
+/*------------------------------------------------
+--                     BODY                    --
+--------------------------------------------------*/
+
+body {
+    font-family: "roboto", arial;
+    font-size: 14pt;
+    background-color: #9d9d9d;
+}
+
+/*Typographie*/
+.petit{font-size: 0.75rem;}
+.normal{font-size: 1rem;}
+.gros{font-size: 1.5rem;}
+.tresGros{font-size: 2rem;}
+.large{font-size: 2.5rem;}
+.tresLarge{font-size: 5rem;}
+
+/*Theme : Terrosos -Verdes claros*/
+.color1{
+    color: #7E8A68;
+}
+
+.color2{
+    color: #95A47B;
+}
+
+.color3{
+    color: #A1B185;
+}
+
+.color4{
+    color: #BDD09C;
+}
+
+.color5{
+    color: #DBF0B4;
+}
+
+.backColor1{
+    background-color: #7E8A68;
+}
+
+.backColor2{
+    background-color: #95A47B;
+}
+
+.backColor3{
+    background-color: #A1B185;
+}
+
+.backColor4{
+    background-color: #BDD09C;
+}
+
+.backColor5{
+    background-color: #DBF0B4;
+}
+
+nav {
+    align-self: flex-start;
+}
+
+#container {
+    width: 1500px;
+    min-height: 790px;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: white;
+    box-shadow: 0 0 10px black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+nav li {
+    display: inline;
+    padding: 0.5rem;
+}
+
+form {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    margin-top: 5rem;
+}
+
+.bouton {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+
+h1 {
+    color: burlywood;
+    text-shadow: 2px 2px 5px black;
+}
+
+label {
+    color: saddlebrown;
+    font-size: 1.25rem;
+    padding-bottom: 0.5rem;
+}
+/*------------------------------------------------
+--                  RESPONSIVE                  --
+--------------------------------------------------*/
+
+@media all and (min-width: 1535px) {
+    body {
+        width: 1580px;
+    }
+}
+
+@media all and (min-width: 1200px) {
+    /*header, footer {*/
+    /*padding-right: 36px;*/
+    /*padding-left: 36px;*/
+    /*}*/
+}
+
+@media all and (min-width: 992px) {
+    /*header, .tt-bsh-container, footer {*/
+    /*padding-right: 26px;*/
+    /*padding-left: 26px;*/
+    /*}*/
+}
+
+@media all and (min-width: 768px) {
+    /*header, main, footer {*/
+    /*padding-right: 24px;*/
+    /*padding-left: 24px;*/
+    /*}*/
+    /*#mnuDesktop {*/
+    /*}*/
+}

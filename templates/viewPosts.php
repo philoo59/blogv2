@@ -1,8 +1,16 @@
 <?php
 $title = 'BLOG V2';
+$css = 'css/style.css';
 
 ob_start();
+
 ?>
+<nav>
+    <ul>
+        <li><a href="index.php/ajout.php">Ajouter un article</a></li>
+        <li><a href="index.php/export.php">Exporter la liste des articles</a></li>
+    </ul>
+</nav>
 
 <h1>Liste des articles</h1>
 <ul>
