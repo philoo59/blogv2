@@ -42,11 +42,16 @@ function addPost($p_data)
 {
     connexion($link);
 
+    $titre = htmlspecialchars($p_data['title']);
+    $titre = htmlentities($titre);
+    $detail = htmlspecialchars($p_data['detail']);
+    $detail = htmlentities($detail);
+
     $sql = 'INSERT INTO post VALUES (NULL ,:titre,:detail)';
     $statement = $link->prepare($sql);
 
-    $statement->bindValue(':titre', $p_data['title'], PDO::PARAM_STR);
-    $statement->bindValue(':detail', $p_data['detail'], PDO::PARAM_STR);
+    $statement->bindValue(':titre', $titre, PDO::PARAM_STR);
+    $statement->bindValue(':detail', $detail, PDO::PARAM_STR);
 
     $return = $statement->execute();
     closeConnexion($link);
@@ -58,13 +63,19 @@ function addPost($p_data)
 function modifPost($p_data)
 {
     connexion($link);
+    $titre = htmlspecialchars($p_data['title']);
+    $titre = htmlentities($titre);
+    $detail = htmlspecialchars($p_data['detail']);
+    $detail = htmlentities($detail);
+    $id = htmlspecialchars($p_data['id']);
+    $id = htmlentities($id);
 
     $sql = 'UPDATE post SET title = :titre, detail = :detail WHERE id = :id';
     $statement = $link->prepare($sql);
 
-    $statement->bindValue(':titre', $p_data['title'], PDO::PARAM_STR);
-    $statement->bindValue(':detail', $p_data['detail'], PDO::PARAM_STR);
-    $statement->bindValue(':id', $p_data['id'], PDO::PARAM_INT);
+    $statement->bindValue(':titre', $titre, PDO::PARAM_STR);
+    $statement->bindValue(':detail', $detail, PDO::PARAM_STR);
+    $statement->bindValue(':id', $id, PDO::PARAM_INT);
 
     $return = $statement->execute();
     closeConnexion($link);
@@ -74,11 +85,13 @@ function modifPost($p_data)
 function suppPost($p_id)
 {
     connexion($link);
+    $id = htmlspecialchars($p_id);
+    $id = htmlentities($id);
 
     $sql = 'DELETE FROM post WHERE id = :id';
     $statement = $link->prepare($sql);
 
-    $statement->bindValue(':id', $p_id, PDO::PARAM_INT);
+    $statement->bindValue(':id', $id, PDO::PARAM_INT);
 
     $return = $statement->execute();
     closeConnexion($link);

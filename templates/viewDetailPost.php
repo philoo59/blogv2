@@ -13,7 +13,7 @@ ob_start();
 </nav>
 
 
-<h1> <?= $row['title'] ?></h1>'
+<h1> <?= $row['title'] ?></h1>
 <p><?= $row['detail'] ?></p>
 
 <?php

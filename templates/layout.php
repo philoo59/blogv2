@@ -9,7 +9,7 @@
     <title><?= $title ?></title>
 </head>
 <body>
-<div id="container">
+<div id="container" class="row">
     <?= $content ?>
 </div>
 </body>

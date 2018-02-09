@@ -9,12 +9,11 @@
 $title = 'BLOG V2';
 $css = '../css/style.css';
 
-if (sizeof($_POST) === 0) {
-
-    ob_start();
-    ?>
+ob_start();
+?>
     <h1>Ajouter un article</h1>
-    <form method="post">
+    <h2><?= $erreur ?></h2>
+    <form method="post" action="/blogv2/index.php/ajoutValue.php">
         <label for="title">TITRE : </label>
         <input id="title" type="text" name="title" placeholder="Saisissez le titre"><br>
         <label for="detail">DETAIL : </label>
@@ -25,32 +24,8 @@ if (sizeof($_POST) === 0) {
         </div>
     </form>
 
-    <?php
-    $content = ob_get_clean();
-    include('layout.php');
-} elseif ($_POST['title'] === '' || $_POST['detail'] === '') {
-    ob_start();
-    ?>
-    <h2>Vous devez renseigner tous les champs</h2>
-    <form method="post">
-        <label for="title">TITRE : </label>
-        <input id="title" type="text" name="title" placeholder="Saisissez le titre"><br>
-        <label for="detail">DETAIL : </label>
-        <textarea name="detail" id="detail" cols="30" rows="10"></textarea>
-        <div class="bouton">
-            <input type="submit" value="Ajouter">
-            <input type="button" onclick="javascript:location.href = '/blogv2/index.php';" value="Annuler">
-        </div>
-    </form>
-
-    <?php
-    $content = ob_get_clean();
-    include('layout.php');
-} else {
-    $retour = addPost($_POST);
-    if ($retour) {
-        header('Location: /blogv2/index.php');
-    }
-}
+<?php
+$content = ob_get_clean();
+include('layout.php');
 
 ?>

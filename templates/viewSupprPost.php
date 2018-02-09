@@ -17,7 +17,7 @@ if (sizeof($_POST) === 0) {
         <label for="title">TITRE : </label>
         <input id="title" type="text" name="title" value="<?= $row['title'] ?>" disabled><br>
         <label for="detail">DETAIL : </label>
-        <textarea name="detail" id="detail" cols="30" rows="10"><?= $row['detail']?></textarea>
+        <textarea name="detail" id="detail" cols="30" rows="10" disabled><?= $row['detail']?></textarea>
         <input type="hidden" name="id" value="<?= $row['id'] ?>">
         <div class="bouton">
             <input type="submit" value="Supprimer">
@@ -33,6 +33,7 @@ if (sizeof($_POST) === 0) {
     $retour = suppPost($_POST['id']);
 
     if ($retour) {
+        $_SESSION['message'] = 'Article supprimé';
         header('Location: /blogv2/index.php');
     }
 }
